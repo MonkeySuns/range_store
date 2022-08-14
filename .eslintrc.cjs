@@ -32,6 +32,7 @@ module.exports = {
         'brace-style': [ 2, '1tbs', {'allowSingleLine': true} ],
         'quotes': [ 2, 'single', {'allowTemplateLiterals': true} ], // 尽可能使用单引号
         'array-element-newline': [ 2, 'consistent', { 'multiline': true } ], // 数组换行
-        'prefer-destructuring': [ 2, {'object': true} ] // 优先使用解构
+        'prefer-destructuring': [ 2, {'object': true} ], // 优先使用解构
+        'vue/multi-word-component-names': 0 // 关闭eslint检查文件名是否为驼峰命名
     }
 }

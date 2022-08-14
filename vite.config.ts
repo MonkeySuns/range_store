@@ -7,6 +7,9 @@ import { resolve as pathResolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 8520
+  },
   plugins: [
     vue(),
     AutoImport({
@@ -19,6 +22,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': pathResolve(__dirname, './src')
-    }
+    },
+    extensions: [ '.js', '.vue', 'ts' ]
   }
 })
