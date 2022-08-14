@@ -24,5 +24,12 @@ export default defineConfig({
       '@': pathResolve(__dirname, './src')
     },
     extensions: [ '.js', '.vue', 'ts' ]
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/style/constant.module.scss";'
+      }
+    }
   }
 })
