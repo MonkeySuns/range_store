@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside width="17rem">
-      <Aside/>
+      <Aside />
     </el-aside>
     <el-container>
       <el-header><p>头部</p></el-header>
@@ -12,6 +12,11 @@
 
 <script lang="ts" setup>
 import Aside from './components/Aside/index.vue'
+import { routerStore } from '@/store/routerStore'
+const temp = routerStore()
+
+console.log(temp);
+
 </script>
 
 
