@@ -12,10 +12,9 @@
 
 <script lang="ts" setup>
 import Aside from './components/Aside/index.vue'
-import { routerStore } from '@/store/routerStore'
-const temp = routerStore()
+// import { routerStore } from '@/store/routerStore'
 
-console.log(temp);
+
 
 </script>
 
@@ -26,16 +25,6 @@ console.log(temp);
 
   .el-aside {
     background-color: $primaryColor;
-  }
-
-  .el-container {
-    .el-header {
-      
-    }
-
-    .el-main {
-      
-    }
   }
 }
 </style>

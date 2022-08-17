@@ -1,9 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Layout from '@/layout'
+import Layout from '@/layout/index.vue'
 
 export const common = [
   {
     path: '/',
+    name: '',
     redirect: '/home'
   },
   {
@@ -12,7 +13,6 @@ export const common = [
     component: Layout
   }
 ]
-
 
 export const routers = createRouter({
   routes: common,

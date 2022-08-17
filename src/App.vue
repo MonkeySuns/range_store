@@ -3,6 +3,10 @@
 </template>
 
 <script setup lang="ts">
+// import { useInfo } from '@/store/useInfo';
+
+// const people = useInfo();
+
 
 </script>
 
