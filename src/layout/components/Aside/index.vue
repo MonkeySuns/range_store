@@ -20,8 +20,16 @@
 
 <script setup lang="ts">
 import { routerStore } from '@/store/routerStore'
+import { watch } from 'vue'
+import { useRouter } from 'vue-router'
+
 const currentRouter= routerStore().GET_CURRENT()
-console.log('获取的路由信息: ==> ', currentRouter)
+const router = useRouter()
+
+watch(() => router.currentRoute.value.path, (nd, od) => {
+  console.log(nd)
+}, { immediate: true })
+
 
 
 </script>
