@@ -3,20 +3,25 @@
     default-active="2"
     class="el-menu-vertical-demo"
   >
-    <el-sub-menu index="1">
-      <template #title>第一个标签</template>
-      <el-menu-item index="1-1-1">item one</el-menu-item>
-    </el-sub-menu>
-    <el-menu-item index="2">
-      <template #title>第二个标签</template>
-    </el-menu-item>
+    <template v-for="item of currentRouter" :key="item.path">
+      <el-sub-menu v-if="item.children?.length" :index="item.path">
+        <template #title>{{ item.meta?.title }}</template>
+        <el-menu-item v-for="child of item.children" :key="child.path" :index="`${item.path}-${child.path}`">
+          {{ child.meta?.title }}
+        </el-menu-item>
+      </el-sub-menu>
+
+      <el-menu-item v-else>
+        <template #title>{{ item.meta?.title }}</template>
+      </el-menu-item>
+    </template>
   </el-menu>
 </template>
 
 <script setup lang="ts">
-import { common } from '@/router'
-
-console.log(common);
+import { routerStore } from '@/store/routerStore'
+const currentRouter= routerStore().GET_CURRENT()
+console.log('获取的路由信息: ==> ', currentRouter)
 
 
 </script>

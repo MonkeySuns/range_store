@@ -1,11 +1,15 @@
 import { defineStore } from 'pinia'
+import { RouteRecordRaw } from 'vue-router'
+import { getRouter } from '@/router/index'
 
 export const routerStore = defineStore('routerStore', () => ({
-  nowRouter: [ 1, 2, 3 ],
+  currentRouter: <RouteRecordRaw[]>[],
 
-  currentArr: [],
+  SET_CURRENT(roles: Array<string>) {
+    this.currentRouter = getRouter(roles)
+  },
 
-  SET_CURRENT(entry: []) {
-    this.currentArr = entry;
+  GET_CURRENT() {
+    return this.currentRouter
   }
 }))

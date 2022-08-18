@@ -3,9 +3,17 @@
 </template>
 
 <script setup lang="ts">
-// import { useInfo } from '@/store/useInfo';
+import { useInfo } from '@/store/useInfo'
+import { routerStore } from '@/store/routerStore'
 
-// const people = useInfo();
+
+const user = useInfo()
+const routeAbout = routerStore()
+  
+user.SET_ROLES([ 'guest' ]) // 设置角色
+  
+routeAbout.SET_CURRENT(user.GET_ROLES())
+  
 
 
 </script>

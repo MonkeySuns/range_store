@@ -1,19 +1,17 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 export const useInfo = defineStore('useInfo', {
-  state() {
-    return {
-      rangeArr: []
-    }
-  },
-
-  getters: {
-
-  },
+  state: () => ({
+    roles: <string[]>[]
+  }),
 
   actions: {
-    firstFun(entry: []) {
-      this.rangeArr = entry
+    SET_ROLES(entry: string[]) {
+      this.roles = entry
+    },
+
+    GET_ROLES() {
+      return this.roles
     }
   }
 })
