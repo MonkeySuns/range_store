@@ -37,6 +37,6 @@ module.exports = {
     'prefer-destructuring': [2, {'object': true}], // 优先使用解构
     'vue/multi-word-component-names': 0, // 关闭eslint检查文件名是否为驼峰命名
     'indent': [2, 2], // 统一缩进
-    'semi': [2, 'never']
+    'semi': [2, 'never'] // 分号, 禁止使用分号
   }
 }
