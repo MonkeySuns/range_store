@@ -13,17 +13,13 @@ export const common: RouteRecordRaw[] = [
   {
     path: '/',
     redirect: '/home',
-    meta: {
-      hidden: true
-    }
+    meta: { hidden: true }
   },
   {
     path: '/home',
     name: 'Home',
     component: Layout,
-    meta: {
-      title: '首页'
-    }
+    meta: { title: '首页' }
   }
 ]
 

@@ -1,9 +1,7 @@
 import { defineStore } from 'pinia'
 
 export const useInfo = defineStore('useInfo', {
-  state: () => ({
-    roles: <string[]>[]
-  }),
+  state: () => ({ roles: <string[]>[] }),
 
   actions: {
     SET_ROLES(entry: string[]) {

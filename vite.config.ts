@@ -7,29 +7,15 @@ import { resolve as pathResolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    port: 8520
-  },
+  server: { port: 8520 },
   plugins: [
     vue(),
-    AutoImport({
-      resolvers: [ ElementPlusResolver() ]
-    }),
-    Components({
-      resolvers: [ ElementPlusResolver() ]
-    })
+    AutoImport({ resolvers: [ ElementPlusResolver() ] }),
+    Components({ resolvers: [ ElementPlusResolver() ] })
   ],
   resolve: {
-    alias: {
-      '@': pathResolve(__dirname, './src')
-    },
+    alias: { '@': pathResolve(__dirname, './src') },
     extensions: ['.js', '.vue', 'ts']
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@import "@/style/constant.module.scss";'
-      }
-    }
-  }
+  css: { preprocessorOptions: { scss: { additionalData: '@import "@/style/constant.module.scss";' } } }
 })
