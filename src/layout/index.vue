@@ -5,7 +5,7 @@
     </el-aside>
     <el-container>
       <el-header>
-        <Header/>
+        <Header />
       </el-header>
       <el-main>主体部分</el-main>
     </el-container>
@@ -13,12 +13,9 @@
 </template>
 
 <script lang="ts" setup>
-import Aside from './components/Aside/index.vue'
-import Header from './components/header/index.vue'
+import Aside from "./components/Aside/index.vue";
+import Header from "./components/header/index.vue";
 // import { routerStore } from '@/store/routerStore'
-
-
-
 </script>
 
 
@@ -29,5 +26,9 @@ import Header from './components/header/index.vue'
   .el-aside {
     background-color: $primaryColor;
   }
+}
+
+.el-header {
+  padding: 0;
 }
 </style>
