@@ -13,8 +13,6 @@ const routeAbout = routerStore()
 user.SET_ROLES([ 'guest' ]) // 设置角色
   
 routeAbout.SET_CURRENT(user.GET_ROLES())
-  
-
 
 </script>
 

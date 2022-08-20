@@ -9,19 +9,21 @@ declare module 'vue-router' {
   }
 }
 
-export const common: RouteRecordRaw[] = [
-  {
-    path: '/',
-    redirect: '/home',
+export const common: RouteRecordRaw[] = [{
+  path: '',
+  redirect: '/home',
+  meta: { hidden: true }
+}, {
+  path: '/home',
+  component: Layout,
+  redirect: '/home',
+  meta: { title: '首页' },
+  children: [ {
+    path: '',
+    component: () => import('@/views/Home/index.vue'),
     meta: { hidden: true }
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Layout,
-    meta: { title: '首页' }
-  }
-]
+  } ]
+}]
 
 const asyncRoute: Array<RouteRecordRaw> = [
   {

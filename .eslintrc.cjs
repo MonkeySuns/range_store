@@ -47,6 +47,7 @@ module.exports = {
     }],
     'object-curly-newline': [2, { 'multiline': true }], // 大括号中, 使用一致的换行符
     'object-curly-spacing': [2, 'always'], // 强制在花括号中使用一致的空格
-    'no-whitespace-before-property': 2 // 禁止属性前有空白
+    'no-whitespace-before-property': 2, // 禁止属性前有空白
+    'arrow-spacing': [2, { 'before': true, 'after': true }] // 箭头函数, 箭头前后空格情况
   }
 }

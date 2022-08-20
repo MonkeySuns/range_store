@@ -8,7 +8,11 @@
     <template v-for="item of currentRouter" :key="item.path">
       <el-sub-menu v-if="item.children?.length" :index="item.path">
         <template #title>{{ item.meta?.title }}</template>
-        <el-menu-item v-for="child of item.children" :key="child.path" :index="`${item.path}/${child.path}`">
+        <el-menu-item
+          v-for="child of item.children"
+          :key="child.path"
+          :index="`${item.path}/${child.path}`"
+        >
           {{ child.meta?.title }}
         </el-menu-item>
       </el-sub-menu>
@@ -25,21 +29,25 @@ import { routerStore } from '@/store/routerStore'
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
-const currentRouter= routerStore().GET_CURRENT()
+const currentRouter = routerStore().GET_CURRENT()
 const router = useRouter()
 const rangeRouter = ref('')
 
-watch(() => router.currentRoute.value.path, nd => {
-  console.log(nd)
-  rangeRouter.value = nd
-}, { immediate: true })
+watch(
+  // 侦听当前路由变化
+  () => router.currentRoute.value.path,
+  (nd) => {
+    console.log('侦听属性: ==> ', nd)
+
+    rangeRouter.value = nd
+  },
+  { immediate: true }
+)
 
 const checkRouter = (currentRoute: string) => {
   console.log(currentRoute)
   // rangeRouter.value = currentRoute
 }
-
-
 </script>
 
 <style lang="scss" scoped>

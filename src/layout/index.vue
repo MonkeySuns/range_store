@@ -7,17 +7,17 @@
       <el-header>
         <Header />
       </el-header>
-      <el-main>主体部分</el-main>
+      <el-main>
+        <RouterView/>
+      </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script lang="ts" setup>
-import Aside from "./components/Aside/index.vue";
-import Header from "./components/header/index.vue";
-// import { routerStore } from '@/store/routerStore'
+import Aside from './components/Aside/index.vue'
+import Header from './components/header/index.vue'
 </script>
-
 
 <style lang="scss" scoped>
 .el-container {
