@@ -26,13 +26,20 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-import { RouteRecordRaw } from 'vue-router'
-import { routerStore } from '@/store/routerStore'
+import { reactive, watch } from 'vue'
+import { RouteRecordRaw, useRouter } from 'vue-router'
 
 const breadcrumbArr: Array<RouteRecordRaw> = reactive([])
 
-console.log(routerStore().GET_CURRENT())
+const originRouter = useRouter()
+
+watch(
+  () => originRouter.currentRoute,
+  (nd) => {
+    console.log(nd)
+  },
+  { immediate: true }
+)
 </script>
 
 <style lang="scss" scoped>

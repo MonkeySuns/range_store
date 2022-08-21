@@ -45,7 +45,7 @@ watch(
 )
 
 const checkRouter = (currentRoute: string) => {
-  console.log(currentRoute)
+  console.log('点击事件: ==> ', currentRoute)
   // rangeRouter.value = currentRoute
 }
 </script>

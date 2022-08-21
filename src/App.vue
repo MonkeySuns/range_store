@@ -1,21 +1,18 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <script setup lang="ts">
 import { useInfo } from '@/store/useInfo'
 import { routerStore } from '@/store/routerStore'
 
-
 const user = useInfo()
 const routeAbout = routerStore()
-  
-user.SET_ROLES([ 'guest' ]) // 设置角色
-  
+
+user.SET_ROLES(['guest']) // 设置角色
+
 routeAbout.SET_CURRENT(user.GET_ROLES())
-
 </script>
-
 
 <style>
 * {

@@ -1,5 +1,8 @@
 <template>
-  <p>这里是首页</p>
+  <p>现在是首页</p>
+  <div class="root">
+    <div class="root-count"></div>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
