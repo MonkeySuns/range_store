@@ -74,7 +74,7 @@ const filterRouter = (
   userRoles: Array<string>
 ): RouteRecordRaw[] => {
   const res: RouteRecordRaw[] = []
-  entry.forEach((route) => {
+  entry.forEach(route => {
     if (!route?.meta?.hidden) {
       // 当前路由不隐藏
 

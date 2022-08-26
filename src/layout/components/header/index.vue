@@ -4,14 +4,14 @@
       <el-breadcrumb>
         <template v-for="(item, i) in breadcrumbArr">
           <el-breadcrumb-item
-            v-if="item.path"
+            v-if="item.title"
             :key="item.path"
             :to="{ path: item.path }"
           >
-            {{ item.meta?.title }}
+            {{ item.title }}
           </el-breadcrumb-item>
           <el-breadcrumb-item v-else :key="i">{{
-            item.meta?.title
+            item?.title
           }}</el-breadcrumb-item>
         </template>
       </el-breadcrumb>
@@ -27,18 +27,38 @@
 
 <script setup lang="ts">
 import { reactive, watch } from 'vue'
-import { RouteRecordRaw, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 
-const breadcrumbArr: Array<RouteRecordRaw> = reactive([])
+interface rangePath {
+  title: string
+  path: string
+}
+
+const breadcrumbArr: Array<rangePath> = reactive([])
 
 const originRouter = useRouter()
 
 watch(
   () => originRouter.currentRoute,
-  (nd) => {
-    console.log(nd)
+  nd => {
+    breadcrumbArr.length = 0 // 清空原数组
+    const originArr = nd.value.matched
+    if (originArr[0].path !== '/home') {
+      breadcrumbArr.push({
+        title: '首页',
+        path: '/home'
+      })
+    }
+
+    originArr.forEach(item => {
+      breadcrumbArr.push({
+        title: item.meta.title || '',
+        path: item.path
+      })
+    })
+
   },
-  { immediate: true }
+  { immediate: true, deep: true }
 )
 </script>
 

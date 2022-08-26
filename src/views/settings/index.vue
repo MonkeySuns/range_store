@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-console.log('设置页面')
+
 </script>
 
 <style lang="sass" scoped></style>

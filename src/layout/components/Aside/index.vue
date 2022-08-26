@@ -3,7 +3,6 @@
     :default-active="rangeRouter"
     class="el-menu-vertical-demo"
     :router="true"
-    @select="checkRouter"
   >
     <template v-for="item of currentRouter" :key="item.path">
       <el-sub-menu v-if="item.children?.length" :index="item.path">
@@ -33,21 +32,15 @@ const currentRouter = routerStore().GET_CURRENT()
 const router = useRouter()
 const rangeRouter = ref('')
 
-watch(
-  // 侦听当前路由变化
-  () => router.currentRoute.value.path,
-  (nd) => {
-    console.log('侦听属性: ==> ', nd)
 
+watch( // 侦听当前路由变化
+  () => router.currentRoute.value.path,
+  nd => {
     rangeRouter.value = nd
   },
   { immediate: true }
 )
 
-const checkRouter = (currentRoute: string) => {
-  console.log('点击事件: ==> ', currentRoute)
-  // rangeRouter.value = currentRoute
-}
 </script>
 
 <style lang="scss" scoped>
