@@ -1,9 +1,15 @@
 <template>
-  <p>设置页面</p>
+  <div class="root">
+    <p>设置页面</p>
+  </div>
 </template>
 
 <script setup lang="ts">
 
 </script>
 
-<style lang="sass" scoped></style>
+<style scoped lang="scss">
+  .root{
+    height: 100%;
+  }
+</style>

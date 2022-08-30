@@ -56,7 +56,6 @@ watch(
         path: item.path
       })
     })
-
   },
   { immediate: true, deep: true }
 )
