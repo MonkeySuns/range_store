@@ -11,6 +11,7 @@
   "dependencies": {
     "@antv/g2plot": "^2.4.20",
     "element-plus": "^2.2.13",
+    "nprogress": "^0.2.0",
     "pinia": "^2.0.18",
     "sass": "^1.54.4",
     "vue": "^3.2.37",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.7.3",
+    "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "@vitejs/plugin-vue": "^3.0.3",
